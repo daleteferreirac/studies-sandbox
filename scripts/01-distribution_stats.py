@@ -15,10 +15,15 @@ print("median: ", np.median(data))
 print("standard deviation: ", np.std(data))
 
 # histogram
+plt.figure()
 plt.hist(data, bins=20) # bins = groups histogram
 plt.title("Alcohol Distribution")
 plt.xlabel("Alcohol")
 plt.ylabel("Frequency")
+plt.show()
 
-
-
+# box plot
+plt.figure()
+plt.boxplot(data)
+plt.title("alcohol distribution")
+plt.show()
