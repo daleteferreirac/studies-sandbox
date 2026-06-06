@@ -37,3 +37,5 @@ plt.title("Variable comparison")
 plt.ylabel("values")
 plt.show()
 
+print(df["alcohol"].describe())
+print(df["fixed acidity"].describe())
