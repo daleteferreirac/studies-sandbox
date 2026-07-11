@@ -1,8 +1,10 @@
+from pathlib import Path
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("/Users/daleteferreira/PycharmProjects/studies-sandbox/data/WineQT.csv") # turn into dataframe
+DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "WineQT.csv" # relative to repo root, works on any machine
+df = pd.read_csv(DATA_PATH) # turn into dataframe
 
 print(df.head()) # shows 5 rows (pattern)
 print(df.columns) # shows index of columns
