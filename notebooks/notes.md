@@ -21,3 +21,5 @@
 **Spearman:** measures a monotonic relationship (rises/falls consistently, even if curved), using ranks instead of raw values. More robust to outliers.
 **Comparing them:** close values means the relationship is close to linear. Spearman clearly higher means there's a real trend that Pearson, being linear only, is underselling.
 **Correlation matrix:** the same Pearson formula run for every pair of numeric columns at once. Diagonal is always 1, symmetric across the middle. The heatmap turns that grid into colors so patterns are easier to spot.
+**Conclusions:** if try to predict quality, alcohol is much more informative than fixed acidity;  in the group fixed acidity, citric acid, density and pH they have strong correlations with each other 
+(fixed acidity x pH = -0.685, fixed acidity x citric acid = 0.673, fixed acidity x density = 0.68). This is expected chemically, when one changes, the others tend to change along with it. is called ML: multicollinearity (variables redundant with each other)
