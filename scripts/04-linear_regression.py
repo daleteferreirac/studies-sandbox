@@ -8,4 +8,7 @@ DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "WineQT.csv" # rel
 
 df = pd.read_csv(DATA_PATH)
 
+m, b = np.polyfit(df["alcohol"], df["quality"], 1) # fit a polynomial (1)
+print("slope (m):", m) # inclinação
+print("intercept (b):", b) # intercepto
 
