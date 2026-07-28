@@ -12,3 +12,12 @@ m, b = np.polyfit(df["alcohol"], df["quality"], 1) # fit a polynomial (1)
 print("slope (m):", m) # inclinação
 print("intercept (b):", b) # intercepto
 
+plt.figure()
+plt.scatter(df["alcohol"], df["quality"], alpha=0.3)
+x_line = np.linspace(df["alcohol"].min(), df["alcohol"].max(), 100)
+y_line = m * x_line + b
+plt.plot(x_line, y_line, color="red")
+plt.xlabel("alcohol")
+plt.ylabel("quality")
+plt.title("alcohol vs quality with fitted line")
+plt.show()
