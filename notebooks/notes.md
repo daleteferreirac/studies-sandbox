@@ -23,3 +23,12 @@
 **Correlation matrix:** the same Pearson formula run for every pair of numeric columns at once. Diagonal is always 1, symmetric across the middle. The heatmap turns that grid into colors so patterns are easier to spot.
 **Conclusions:** if try to predict quality, alcohol is much more informative than fixed acidity;  in the group fixed acidity, citric acid, density and pH they have strong correlations with each other 
 (fixed acidity x pH = -0.685, fixed acidity x citric acid = 0.673, fixed acidity x density = 0.68). This is expected chemically, when one changes, the others tend to change along with it. is called ML: multicollinearity (variables redundant with each other)
+
+## 04 — linear_regression
+
+- **The idea:** correlation says two variables move together; regression draws the actual line that best summarizes that relationship, so it can be used to predict.
+- **The equation:** `y = m*x + b`. `m` (slope) = how much y changes per unit of x. `b` (intercept) = predicted y when x = 0.
+- **Least squares:** the fitting method used by `np.polyfit`. For every possible line, measure the vertical distance from each point to the line (the residual), square it, sum everything, and pick the line that makes that sum smallest.
+- **Link to correlation:** stronger correlation → points sit tighter around the line → better predictions. For simple linear regression, R² (how much of y's variation the line explains) is literally Pearson squared.
+- **Fitted `alcohol ~ quality` line:** slope is positive, matching the 0.485 Pearson from section 03. Plotted over the scatter, the line passes through the densest rows (quality 5/6/7) rather than the sparse ones (3/4/8) — least squares is pulled toward wherever most data points are.
+- **Quality is discrete, alcohol isn't:** the line will never sit exactly on any row of points, since quality only takes integer values. That's expected, not an error — the line is the best average trend, not an exact fit.
